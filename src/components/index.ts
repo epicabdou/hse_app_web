@@ -1,1 +1,1 @@
-export { MainHeader } from './MainHeader'
+export { SideBar } from './SideBar.tsx'

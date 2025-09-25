@@ -3,9 +3,9 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { ClerkProvider } from "@clerk/react-router";
 
-import {Home, Users, User, Login, Register, Account} from "@/pages";
+import {Home, Users, User, Login, Register, Inspections, Tester} from "@/pages";
 import { AuthLayout, MainLayout } from "@/layouts";
-import "./index.css";
+import "./styles/index.css";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
@@ -20,11 +20,12 @@ createRoot(document.getElementById("root")!).render(
                     {/* Protected app routes */}
                     <Route element={<MainLayout />}>
                         <Route index element={<Home />} />
+                        <Route path="/inspections" element={<Inspections />} />
+                        <Route path="/tester" element={<Tester />} />
                         <Route path="users">
                             <Route index element={<Users />} />
                             <Route path=":id" element={<User />} />
                         </Route>
-                        <Route path="account" element={<Account />} />
                     </Route>
 
                     {/* Auth routes (public) */}

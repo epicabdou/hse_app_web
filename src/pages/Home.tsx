@@ -1,9 +1,11 @@
 // src/pages/Home.tsx
+import SuperadminChecker from "@/components/SuperadminChecker.tsx";
+
 export function Home() {
 
   return (
     <>
-      <h1>Hello</h1>
+        <SuperadminChecker />
     </>
   )
 }

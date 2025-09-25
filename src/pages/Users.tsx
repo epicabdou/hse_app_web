@@ -1,22 +1,9 @@
 // src/pages/Users.tsx
-import { useNavigate } from 'react-router'
-import { Button } from "@/components/ui/button"
+import UserManagementTable from "@/components/UsersTable.tsx";
 
 export function Users() {
 
-    const navigateTo = useNavigate();
-
     return (
-        <>
-            <h1>Users</h1>
-
-            <Button onClick={
-                () => (
-                    navigateTo('1')
-                )
-            }>
-                User: 1
-            </Button>
-        </>
+        <UserManagementTable listUrl="/api/users" mutateBaseUrl="/api/users" className="" />
     )
 }
